@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-
+import '@/styles/style.commonLayout.css'
 
 export default function CommonLayout({
   children
@@ -21,11 +21,11 @@ export default function CommonLayout({
   }
 
   return (
-    <>
+    <div id = 'mainBody'>
       <Header />
       {children}
       <Footer />
-    </>
+    </div>
   );
 }
 

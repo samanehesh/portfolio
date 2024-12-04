@@ -108,11 +108,15 @@ const SlickCarousel = () => {
   useEffect(() => {
     const updateSlidesToShow = () => {
       const width = window.innerWidth;
-      if (width >= 1000) {
+      if (width >= 1200){
         setSlidesToShow(12); // Show 12 slides on larger screens
-      } else if (width >= 600) {
+      }else if (width >= 1000) {
+        setSlidesToShow(8); // Show 12 slides on larger screens
+      }else if (width >= 800) {
         setSlidesToShow(6); // Show 6 slides on medium screens
-      } else {
+      }else if (width >= 600) {
+        setSlidesToShow(4); // Show 6 slides on medium screens
+      }else {
         setSlidesToShow(3); // Show 3 slides on smaller screens
       }
     };
@@ -158,7 +162,7 @@ const SlickCarousel = () => {
   return (
     <Slider {...settings}>
       {images.map((image, index) => (
-        <div className="image-container" key={index}>
+        <div className="image-container mr-3 ml-3" key={index}>
           <Image
             src={image.src}
             alt={image.name}

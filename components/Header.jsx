@@ -57,11 +57,10 @@ const Header = () => {
         
         {/* Navigation Links - Positioned on the right */}
         <nav className="flex items-center">
-          <Link href="/" className={`text-lg font-bold mr-10 ml-5 ${pathname === '/' ? 'text-blue-500' : 'hover:text-blue-500'}`}
-          >
+          <Link href="/" className={`text-lg font-bold mr-10 ml-5 ${pathname === '/' ? 'text-blue-500' : 'hover:text-blue-500'}`}>
             Home
           </Link>
-          <Link href="/projects" className={`text-lg font-bold mr-10 ml-5 ${pathname === '/projects' ? 'text-blue-500' : 'hover:text-blue-500'}`}>
+          <Link href="/projects" className={`text-lg font-bold mr-10 ml-5 ${pathname.startsWith('/projects')  ? 'text-blue-500' : 'hover:text-blue-500'}`}>
             Projects
           </Link>
           <Link href="/contact" className={`text-lg font-bold mr-10 ml-5 ${pathname === '/contact' ? 'text-blue-500' : 'hover:text-blue-500'}`}>
