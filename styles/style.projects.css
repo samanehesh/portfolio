@@ -1,35 +1,73 @@
-.projects{
-    margin-left: 100px;
-    margin-right:100px ;
-    margin-bottom:100px ;
-    margin-top: 20px;
-    /* margin: 100px; */
-    border: 1px solid black;  
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+.projects-container {
+    position: relative;
+    overflow-y: auto; /* Allow vertical scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    height: 100vh; /* Full viewport height */
+    min-height: 500px;
+    height: auto;
+    margin: 20px 100px 100px 100px; /* Combined margin shorthand */
+    border: 0.5px solid rgb(197, 195, 195);
     border-radius: 20px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+.particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Makes sure the stars are behind the content */
+    pointer-events: none; 
+}
+
+.projects{
+    position: relative;
+    z-index: 1; /* This ensures the projects content is above the stars */
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     padding-top: 50px;
     padding-bottom: 50px;
-    min-height: 500px;
-
+    /* gap: 10px; */
 }
 
 .project{
-    margin: 5px;
-    border: 1px solid black; 
+    margin: 10px;
+    border: 1px solid rgb(197, 195, 195);  
+    background-color: white;
     border-radius: 20px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
     width: 400px;
     height: 320px;
-    /* display: flex;
-    flex-direction: column;
-align-items: center;   */
-padding-top: 10px; 
+    padding-top: 10px; 
+    transition: transform 0.2s ease; /* Smooth movement on hover */
 
 }
+.project:hover{
+    transform: translateY(-2px); /* Moves the element up by 5px */
+
+}
+
+@media (max-width: 768px) {
+    .projects {
+        flex-direction: column; /* Stack projects vertically */
+        align-items: center; /* Center-align stacked items */
+    }
+
+    .projects-container {
+        margin: 10px; /* Reduce margins for smaller screens */
+        height: auto; /* Allow container height to adapt */
+    }
+}
+
 .title{
     font-size: large;
     font-weight: bolder;
@@ -39,7 +77,7 @@ padding-top: 10px;
 .images{
     width: 350px;
     height: 200px;
-    border: 1px solid gray;  
+    border: 1px solid rgb(197, 195, 195);  
     border-radius: 20px;
     display: flex;
     /* flex-direction: row; */
@@ -50,8 +88,6 @@ padding-top: 10px;
 .tags{
     display: flex;
     flex-direction: row;
-    /* padding-left: 30px; */
-
 }
 .tags p{
     color: black;
@@ -71,8 +107,6 @@ padding-top: 10px;
     justify-content: space-between;
     padding-left: 30px;
     padding-right: 30px;
-
-
 }
 .moreinfo{
     color: black;
@@ -97,8 +131,6 @@ padding-top: 10px;
     margin-bottom: 50px;
 }
 .filters p{
-    /* color: black; */
-    /* background-color: white; */
     padding: 8px 16px;
     border-radius: 20px;
     border: 1px solid gray; 
@@ -108,4 +140,11 @@ padding-top: 10px;
     text-align: center;
     font-size:medium;
     width: 120px;  
+    transition: transform 0.2s ease; /* Smooth movement on hover */
+
 }
+.filters p:hover{
+    transform: translateY(-3px); /* Moves the element up by 5px */
+}
+
+

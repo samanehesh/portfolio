@@ -1,0 +1,33 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.contact-container {
+    position: relative;
+    overflow: hidden; /* Prevent content from spilling outside */
+    width: 500px; /* Confine the container width */
+    min-height: 500px; /* Set a specific height */
+    border: 1px solid black; /* Optional: Visualize the container's borders */
+    /* background-color: white; Ensure the stars are visible behind */
+  }
+  .particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Match container width */
+    height: 100%; /* Match container height */
+    z-index: -1; /* Keep it behind the content */
+    pointer-events: none; /* Disable interaction with particles */
+}
+  
+
+  
+  
+  .contact {
+    position: relative;
+    z-index: 1; /* Ensures it's above the stars */
+    padding: 20px; /* Add padding or styling for the content */
+  }
+  
