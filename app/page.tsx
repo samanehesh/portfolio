@@ -9,7 +9,7 @@ export default function Home() {
     <div className='mb-3 main-container'>
       <div className='ml-10'>
         <div className='name'>
-          <div>Samanhe</div> 
+          <div>Sama</div> 
           <div>Heshmatzadeh</div>
         </div>
         <div className='full'>

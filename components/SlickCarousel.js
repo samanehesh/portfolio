@@ -109,7 +109,7 @@ const SlickCarousel = () => {
     const updateSlidesToShow = () => {
       const width = window.innerWidth;
       if (width >= 1200){
-        setSlidesToShow(12); // Show 12 slides on larger screens
+        setSlidesToShow(10); // Show 12 slides on larger screens
       }else if (width >= 1000) {
         setSlidesToShow(8); // Show 12 slides on larger screens
       }else if (width >= 800) {
