@@ -8,7 +8,6 @@ import { loadSlim } from "tsparticles-slim"; // Ensure tsparticles-slim is insta
 const Stars = () => {
     const particlesInit = useCallback(async (engine: Engine) => {
         // Load the slim version of tsparticles
-        console.log(engine);
         await loadSlim(engine);
     }, []);
 

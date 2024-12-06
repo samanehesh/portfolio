@@ -1,46 +1,24 @@
-// import React from 'react'
-// import Link from 'next/link';
 
-// const Header = () => {
-//     return (
-//         <div className="flex justify-between items-center p-4 bg-gray-800 text-white mb-4">
-//           <nav>
-//             <Link href="/" className="text-lg font-bold mr-10 ml-5  hover:text-blue-500">
-//               Home
-//             </Link>
-//             <Link href="/projects" className="text-lg font-bold mr-10 ml-5  hover:text-blue-500">
-//               Projects
-//             </Link>
-//             <Link href="/contact" className="text-lg font-bold mr-10 ml-5  hover:text-blue-500">
-//               Contact
-//             </Link>
-
-//           </nav>
- 
-//         </div>
-//       );
-  
-// }
-
-// export default Header
 
 import React from 'react'
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname  } from 'next/navigation'; // Use Next.js Router for navigation
 
+import '@/styles/style.header.css'
 
 
 const Header = () => {
   const pathname = usePathname();  // Get the current route path
 
-    return (
-      <header className="flex justify-between items-center p-4 bg-black text-white mb-4">
+  return (
+    <header>
+      <div className="flex justify-between items-center p-4 mb-4 mt-5">
         <nav className="flex items-center">
           {/* Logo - Positioned on the left */}
           <Link href="/" className="mr-10 ml-5">
             <Image
-              src="/images/s-h-trans-white.svg"
+              src="/images/s-h-trans-black.svg"
               alt="SH Logo"
               width={0}  // Remove width for auto scaling
               height={0} // Remove height for auto scaling
@@ -67,10 +45,16 @@ const Header = () => {
             Contact
           </Link>
         </nav>
-      </header>
-    );
-    
+        <nav className="button-link text-lg font-bold" >
+          Resume
+        </nav>
+      </div>
+      <hr/>
+    </header>
+
+  );
   
+
 }
 
 export default Header

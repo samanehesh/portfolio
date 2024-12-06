@@ -1,5 +1,6 @@
 import SlickCarousel from '@/components/SlickCarousel';
-// import Stars from '@/components/stars';
+import Stars from '@/components/stars';
+import Link from 'next/link';
 
 import '@/styles/style.main.css'
 export default function Home() {
@@ -7,11 +8,12 @@ export default function Home() {
 
   return (
     <div className='mb-3 main-container'>
-      <div className='ml-10'>
-        <div className='name'>
+      <Stars/>
+      <div className='ml-10 mr-10'>
+        {/* <div className='name'>
           <div>Sama</div> 
           <div>Heshmatzadeh</div>
-        </div>
+        </div> */}
         <div className='full'>
           <span>Full</span> 
           <span> Stack</span>
@@ -20,9 +22,22 @@ export default function Home() {
           <span>Web</span> 
           <span> Developer</span>
         </div>
+        <div className='description'>
+          Hello, I am Samaneh Heshmatzadeh. I am  
+          a Full Stack Web Developer with a proven track 
+          record of delivering high quality software solutions 
+          that meet user needs and business objectives.     
+          <span>
+            <Link 
+            className="button-link" 
+            href={`/projects/`}>
+            View My Projects
+            </Link>
+          </span>
+        </div>
+
       </div>
-      {/* <Stars/> */}
-      <div className='mt-52'>
+      <div className='carousel'>
         <SlickCarousel/>
       </div>
 
