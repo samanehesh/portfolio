@@ -10,7 +10,7 @@ export const PROJECTS: IProject[] = [
       "body": "React Calculator is interactive user interface for performing mathematical calculations. Integrating <strong>state management</strong> within React, a calculator project can efficiently handle user input, update display elements, and execute precise mathematical operations.",
       "url": null,
       "published_date": null,
-      "image"  : ["calculator5.jpg","calculator6.jpg"] ,   
+      "image"  : ["calculator5.jpg"] ,   
       "thumb": null,
       "category_id": 2,
       "created_at": "2023-02-23T22:31:23.000000Z",

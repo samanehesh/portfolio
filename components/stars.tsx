@@ -3,36 +3,34 @@
 import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import type { Engine } from "tsparticles-engine";
-import { loadSlim } from "tsparticles-slim"; // Ensure tsparticles-slim is installed
-
+import { loadSlim } from "tsparticles-slim"; 
 const Stars = () => {
     const particlesInit = useCallback(async (engine: Engine) => {
-        // Load the slim version of tsparticles
         await loadSlim(engine);
     }, []);
 
     const particlesOptions = {
         background: {
             color: {
-                value: "#ffffff", // Background color (white)
+                value: "#ffffff", 
             },
         },
         fullScreen: {
-            enable: false, // Enable full-screen particles
+            enable: false, 
         },
         particles: {
             number: {
-                value: 100, // Number of stars
+                value: 100, 
                 density: {
                     enable: true,
-                    value_area: 800, // Density of particles
+                    value_area: 800, 
                 },
             },
             color: {
-                value:'#505050', // Star color (light gray)
+                value:'#505050', 
             },
             shape: {
-                type: "circle", // Particle shape (circle for stars)
+                type: "circle", 
             },
             opacity: {
                 value: 1,
@@ -40,27 +38,27 @@ const Stars = () => {
                 anim: {
                     enable: true,
                     speed: 1,
-                    opacity_min: 0.1, // Fading effect
+                    opacity_min: 0.1, 
                     sync: false,
                 },
             },
             size: {
-                value: 3, // Size of the stars
+                value: 3, 
                 random: true,
                 anim: {
                     enable: true,
                     speed: 4,
-                    size_min: 0.3, // Size change for shimmer effect
+                    size_min: 0.3, 
                     sync: false,
                 },
             },
             move: {
                 enable: true,
-                speed: 0.2, // Slow movement
-                direction: "none" as const, // Use "none" as a valid MoveDirection
+                speed: 0.2, 
+                direction: "none" as const, 
                 random: true,
                 straight: false,
-                outModes: "out" as const, // Ensure "out" is treated as a valid OutMode
+                outModes: "out" as const, 
             },
         },
     };

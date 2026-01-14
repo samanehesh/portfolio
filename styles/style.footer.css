@@ -1,29 +1,23 @@
 .footer {
-    display: grid;
-    position: relative;
     grid-template-rows: 1fr;
-    width: 100%; /* Ensure it spans the full width */
-    grid-template-columns: 1fr; /* Single column spanning the full width */
-    overflow: visible;
-    /* background-color: blue; */
+    width: 100%; 
+    background-color:black;
 }
 
 .first {
-    grid-row: 1; /* Move this div to the second row */
+    grid-row: 1; 
     grid-column: 1;
     z-index: 2;
     text-align: center;
     color: white;
     overflow: visible;
-
-
 }
 
 .second {
-    grid-row: 1; /* Position this div in the first row */
+    grid-row: 1; 
     grid-column: 1;
     z-index: 1;
-    height: 100%; /* Ensure it fills the entire footer height */
-    width: 100%; /* Span the full width of the footer */
+    height: 100%; 
+    width: 100%; 
     overflow: visible;
 }

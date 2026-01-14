@@ -1,60 +1,100 @@
+'use client';
 
-
-import React from 'react'
+import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import { usePathname  } from 'next/navigation'; // Use Next.js Router for navigation
+import { usePathname } from 'next/navigation';
+import { HouseIcon, ListIcon } from '@phosphor-icons/react';
 
-import '@/styles/style.header.css'
-
+import '@/styles/style.header.css';
 
 const Header = () => {
-  const pathname = usePathname();  // Get the current route path
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+
+  const linkClass = (active) =>
+    `font-bold ${
+      active ? 'text-gray-700' : 'hover:text-gray-700'
+    }`;
 
   return (
-    <header>
-      <div className="flex justify-between items-center p-4 mb-4 mt-5">
-        <nav className="flex items-center">
-          {/* Logo - Positioned on the left */}
-          <Link href="/" className="mr-10 ml-5">
-            <Image
-              src="/images/s-h-trans-black.svg"
-              alt="SH Logo"
-              width={0}  // Remove width for auto scaling
-              height={0} // Remove height for auto scaling
-              loading="eager"
-              style={{
-                objectFit: "contain",
-                width: "50px",   // Adjust width as needed
-                height: "50px",  // Adjust height as needed
-                marginBottom: "10px"
-              }}
-            />
+    <header className="w-full shadow-sm">
+      <div className="flex items-center px-4 py-4 mt-5 md:px-8">
+
+        {/* LEFT — Logo */}
+        <div className="flex-shrink-0">
+          <Link href="/">
+            <HouseIcon size={32} weight="bold" className="text-black hover:text-gray-700" />
           </Link>
-        </nav>
-        
-        {/* Navigation Links - Positioned on the right */}
-        <nav className="flex items-center">
-          <Link href="/" className={`text-lg font-bold mr-10 ml-5 ${pathname === '/' ? 'text-blue-500' : 'hover:text-blue-500'}`}>
+        </div>
+
+        {/* CENTER — Desktop Nav */}
+        <nav className="hidden md:flex flex-1 justify-center gap-10 text-lg">
+          <Link href="/" className={linkClass(pathname === '/')}>
             Home
           </Link>
-          <Link href="/projects" className={`text-lg font-bold mr-10 ml-5 ${pathname.startsWith('/projects')  ? 'text-blue-500' : 'hover:text-blue-500'}`}>
+          <Link
+            href="/projects"
+            className={linkClass(pathname.startsWith('/projects'))}
+          >
             Projects
           </Link>
-          <Link href="/contact" className={`text-lg font-bold mr-10 ml-5 ${pathname === '/contact' ? 'text-blue-500' : 'hover:text-blue-500'}`}>
+          <Link
+            href="/contact"
+            className={linkClass(pathname === '/contact')}
+          >
             Contact
           </Link>
         </nav>
-        <nav className="button-link text-lg font-bold" >
-          Resume
-        </nav>
+
+        {/* RIGHT — Resume */}
+        <div className="hidden md:flex flex-shrink-0">
+          <a
+            href="/resume/Samaneh-Heshmatzadeh-Resume.pdf"
+            download
+            className="button-link font-bold"
+          >
+            Resume
+          </a>
+        </div>
+
+        {/* MOBILE MENU BUTTON */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="md:hidden ml-auto text-2xl mt-3"
+          aria-label="Toggle menu"
+        >
+          <ListIcon size={32} weight="bold" className="text-black hover:text-gray-700" />
+          {/* ☰ */}
+        </button>
       </div>
+
+      {/* MOBILE MENU */}
       <hr/>
+      <div>
+        {open && (
+        <div className="md:hidden flex flex-col p-7 gap-6 ">
+          <Link href="/" onClick={() => setOpen(false)}>Home</Link>
+          <hr/>
+          <Link href="/projects" onClick={() => setOpen(false)}>Projects</Link>
+          <hr/>
+          <Link href="/contact" onClick={() => setOpen(false)}>Contact</Link>
+          <hr/>
+
+          <a
+            href="/resume/Samaneh-Heshmatzadeh-Resume.pdf"
+            download
+          >
+            Resume
+          </a>
+        </div>
+      )}
+      </div>
+
+
+      <hr />
     </header>
-
   );
-  
+};
 
-}
+export default Header;
 
-export default Header

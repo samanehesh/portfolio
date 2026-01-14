@@ -37,18 +37,16 @@ const ProjectsPage = () => {
     useEffect(() => {
         const loadFilteredProjects = () => {
             if (selectedTag) {
-                // Filter projects by the selected tag
                 const filteredData = PROJECTS.filter((project) =>
                     project?.tags?.some((tag) => tag.name === selectedTag)
                 );
                 setProjects(filteredData);
             } else {
-                // Show all projects if no tag is selected
                 setProjects(PROJECTS);
             }
         };
         loadFilteredProjects();
-    }, [selectedTag]); // Run effect whenever selectedTag changes
+    }, [selectedTag]); 
     
 
     return (
@@ -78,13 +76,13 @@ const ProjectsPage = () => {
                                     <Image
                                         src={`/pimages/${project.image?.[0] || "angular.png"}`}
                                         alt={project.title}
-                                        width={350} // Specify width for auto scaling
-                                        height={200} // Specify height for auto scaling
+                                        width={350} 
+                                        height={200} 
                                         loading="eager"
                                         style={{
-                                            objectFit: "cover", // Ensures the image covers the container without overflow
-                                            width: "100%", // Ensure image fills the width of the container
-                                            height: "100%", // Ensure image fills the height of the container
+                                            objectFit: "cover", 
+                                            width: "100%", 
+                                            height: "100%", 
                                             borderRadius: "20px",
                                             padding: "2px",
                                         }}

@@ -1,11 +1,7 @@
 .button-link {
     display: inline-block;
-    /* margin-top: 10px; */
     padding: 10px 20px;
-    /* background-color: #007bff; */
-    background-color: #0056b3;
     color: #fff;
-    /* color: black; */
     text-decoration: none;
     border-radius: 5px;
     text-align: center;
