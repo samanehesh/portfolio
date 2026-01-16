@@ -7,7 +7,7 @@ const time = new Date();
 
 const Footer = () => {
   return (
-    <footer className='footer mt-3'>
+    <footer className='footer'>
       {/* Footer content */}
       <div className='first mt-6'>
         <div>© {time.getFullYear()} All Rights Reserved</div>
