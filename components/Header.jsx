@@ -18,7 +18,7 @@ const Header = () => {
 
   return (
     <header className="w-full shadow-sm">
-      <div className="flex items-center px-4 py-4 mt-5 md:px-8">
+      <div className="flex items-center px-4 py-4 mt-3 md:px-8">
 
         {/* LEFT — Logo */}
         <div className="flex-shrink-0">

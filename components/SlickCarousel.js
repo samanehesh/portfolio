@@ -8,20 +8,28 @@ import Image from "next/image";
 
 const SlickCarousel = () => {
   const [slidesToShow, setSlidesToShow] = useState(3); // Default number of images per slide
+  const [iconSize, setIconSize] = useState(80); // Default number of images per slide
 
   useEffect(() => {
     const updateSlidesToShow = () => {
       const width = window.innerWidth;
       if (width >= 1200){
         setSlidesToShow(10); // Show 12 slides on larger screens
+        setIconSize(80)
+
       }else if (width >= 1000) {
         setSlidesToShow(8); // Show 12 slides on larger screens
+        setIconSize(80)
+
       }else if (width >= 800) {
         setSlidesToShow(6); // Show 6 slides on medium screens
+        setIconSize(80)
       }else if (width >= 600) {
         setSlidesToShow(4); // Show 6 slides on medium screens
+        setIconSize(70)
       }else {
         setSlidesToShow(3); // Show 3 slides on smaller screens
+        setIconSize(70)
       }
     };
 
@@ -74,11 +82,15 @@ const SlickCarousel = () => {
             height={100}
             style={{
               objectFit: "contain",
-              width: "80px",
-              height: "80px",
+              width: iconSize,
+              height: iconSize,
             }}
             priority
           />
+
+
+
+
         </div>
       ))}
     </Slider>

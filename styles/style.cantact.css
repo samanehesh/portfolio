@@ -1,33 +1,89 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 .contact-container {
-    position: relative;
-    overflow: hidden; /* Prevent content from spilling outside */
-    width: 500px; /* Confine the container width */
-    min-height: 500px; /* Set a specific height */
-    border: 1px solid black; /* Optional: Visualize the container's borders */
-    /* background-color: white; Ensure the stars are visible behind */
-  }
-  .particles-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%; /* Match container width */
-    height: 100%; /* Match container height */
-    z-index: -1; /* Keep it behind the content */
-    pointer-events: none; /* Disable interaction with particles */
+  /* min-height: 100vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
 }
-  
 
-  
-  
-  .contact {
-    position: relative;
-    z-index: 1; /* Ensures it's above the stars */
-    padding: 20px; /* Add padding or styling for the content */
+.contact-card {
+  background: white;
+  padding: 32px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 420px;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.role {
+  font-size: 16px;
+  margin-bottom: 16px;
+  color: #555;
+}
+
+.intro {
+  font-size: 14px;
+  margin-bottom: 24px;
+  color: #444;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.contact-form button {
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid gray;
+  background: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: transform 0.2s ease;
+}
+
+.contact-form button:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+  .contact-card {
+    padding: 24px;
   }
-  
+}

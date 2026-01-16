@@ -1,6 +1,6 @@
 .main-container{
     position: relative;
-    height: auto;
+    /* height: auto; */
 }
 .particles-container {
     position: absolute;
@@ -19,20 +19,19 @@
 .description{
     margin-top: 20px;
     max-width: 1200px;
-    margin-bottom: 80px;
+    /* margin-bottom: 20px; */
     line-height: 1.8; 
 }
 
 .button-link {
     display: inline-block;
     padding: 7px 15px;
-
     color:black;
-background-color: rgb(244, 242, 242);
+    background-color: rgb(244, 242, 242);
     text-decoration: none;
     border-radius: 5px;
-    font-size: 17px;
-    font-weight:150;
+    /* font-size: 17px;
+    font-weight:150; */
     text-align: center;
     transition: background-color 0.3s ease;
     margin-left: 10px;
@@ -41,7 +40,6 @@ background-color: rgb(244, 242, 242);
   }
 
   .button-link:hover {
-  background-color: rgb(223, 219, 219);
-
+    background-color: rgb(223, 219, 219);
 }
 
