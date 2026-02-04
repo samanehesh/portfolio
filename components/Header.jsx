@@ -49,9 +49,9 @@ const Header = () => {
         {/* RIGHT — Resume */}
         <div className="hidden md:flex flex-shrink-0">
           <a
-            href="/resume/Samaneh-Heshmatzadeh-Resume.pdf"
+            href="/resume/Samaneh-Heshmatzadeh.pdf"
             download
-            className="button-link font-bold"
+            className="button-link font-normal"
           >
             Resume
           </a>
