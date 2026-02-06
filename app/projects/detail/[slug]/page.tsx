@@ -22,6 +22,7 @@ const ProjectPage = ({ params }: { params: Promise<{ slug: string }> }) => {
   const prevImage = () => setCurrent((prev) => (prev - 1 + totalImages) % totalImages);
 
   return (
+  <div className=' dark:bg-black'>
     <div className="max-w-4xl mx-auto p-4 grid gap-6">
       {/* Image Carousel */}
       {totalImages > 0 && (
@@ -63,10 +64,10 @@ const ProjectPage = ({ params }: { params: Promise<{ slug: string }> }) => {
       )}
 
       {/* Title */}
-      <h1 className="text-3xl font-bold">{project.title}</h1>
+      <h1 className="text-3xl font-bold  dark:text-white">{project.title}</h1>
 
       <p
-        className="text-gray-700"
+        className="text-gray-700  dark:text-white"
         dangerouslySetInnerHTML={{ __html: project.body }}
       ></p>
 
@@ -77,7 +78,7 @@ const ProjectPage = ({ params }: { params: Promise<{ slug: string }> }) => {
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-black hover:text-gray-700 transition"
+            className="flex items-center gap-2 dark:text-white text-black hover:text-gray-700 transition"
           >
             <LinkIcon size={30} weight="bold" />
           </a>
@@ -88,13 +89,14 @@ const ProjectPage = ({ params }: { params: Promise<{ slug: string }> }) => {
             href={`https://github.com/samanehesh/${project.repo}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-gray-800 hover:text-gray-600 transition"
+            className="flex items-center gap-2  dark:text-white text-gray-800 hover:text-gray-600 transition"
           >
             <GithubLogoIcon size={30} weight="bold" />
           </a>
         )}
       </div>
     </div>
+  </div>
   );
 };
 

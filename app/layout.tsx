@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css"
 import CommonLayout from '@/layouts/CommonLayout'; 
+import { ThemeProvider } from '@/components/theme-provider'
 
 export const metadata: Metadata = {
   title: "Portfolio-Samaneh Heshmatzadeh",
@@ -18,9 +19,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+
       <body>
-        <CommonLayout>{children}</CommonLayout>
+        <ThemeProvider>
+
+          <CommonLayout>{children}</CommonLayout>
+        </ThemeProvider>
+
       </body>
     </html>
   );
