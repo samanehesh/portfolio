@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css"
-import CommonLayout from '@/layouts/CommonLayout'; 
 import { ThemeProvider } from '@/components/theme-provider'
-
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 export const metadata: Metadata = {
   title: "Portfolio-Samaneh Heshmatzadeh",
   description: "Samaneh Heshmatzadeh",
@@ -21,10 +21,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
 
-      <body>
+      <body className="flex flex-col min-h-screen">
         <ThemeProvider>
-
-          <CommonLayout>{children}</CommonLayout>
+          <Header />
+            <main className="flex-1">
+              {children}
+            </main>          
+          <Footer />
         </ThemeProvider>
 
       </body>

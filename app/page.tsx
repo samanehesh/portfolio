@@ -8,9 +8,9 @@ export default function Home() {
 
 
   return (
-    <div className='main-containe'>
+    <div className='main-container'>
       <Stars/>
-      <div className='ml-10 mr-10 mt-5  dark:bg-black dark:text-white'>
+      <div className='ml-10 mr-10 mt-10  dark:bg-black dark:text-white'>
         <div className="grid grid-cols-1 gap-1">
           <p className="font-light text-[clamp(1.4rem,4vw,2.8rem)]">
 
@@ -40,7 +40,7 @@ export default function Home() {
         </div>
 
       </div>
-      <div className='carousel'>
+      <div className='carousel lg:mt-0 mt-8'>
         <SlickCarousel/>
       </div>
 
