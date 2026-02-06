@@ -5,7 +5,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 export const metadata: Metadata = {
   title: "Portfolio-Samaneh Heshmatzadeh",
-  description: "Samaneh Heshmatzadeh",
+  description: "Samaneh Heshmatzadeh portfolio",
   icons: {
     icon: "/images/sama.svg",  
     apple: "/images/sama.svg", 
