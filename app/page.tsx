@@ -8,7 +8,7 @@ export default function Home() {
 
 
   return (
-    <div className='main-container'>
+    <div className=''>
       <Stars/>
       <div className='ml-10 mr-10 mt-10  dark:bg-black dark:text-white'>
         <div className="grid grid-cols-1 gap-1">
