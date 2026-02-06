@@ -5,7 +5,7 @@ import { ThemeProvider } from '@/components/theme-provider'
 
 export const metadata: Metadata = {
   title: "Portfolio-Samaneh Heshmatzadeh",
-  description: "Samaneh Heshmatzadeh",
+  description: "Samaneh Heshmatzadeh portfolio",
   icons: {
     icon: "/images/sama.svg",  
     apple: "/images/sama.svg", 
