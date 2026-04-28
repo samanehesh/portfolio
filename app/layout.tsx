@@ -1,48 +1,11 @@
-// import type { Metadata } from "next";
-// import "./globals.css"
-// import { ThemeProvider } from '@/components/theme-provider'
-// import Header from '@/components/Header';
-// import Footer from '@/components/Footer';
-// export const metadata: Metadata = {
-//   title: "Portfolio-Samaneh Heshmatzadeh",
-//   description: "Samaneh Heshmatzadeh portfolio",
-//   icons: {
-//     icon: "/images/sama.svg",  
-//     apple: "/images/sama.svg", 
-//   },
-// };
-
-
-// export default function RootLayout({
-//   children,
-// }: Readonly<{
-//   children: React.ReactNode;
-// }>) {
-//   return (
-//     <html lang="en" suppressHydrationWarning>
-
-//       <body className="flex flex-col min-h-screen">
-//         <ThemeProvider>
-//           <Header />
-//             <main className="flex-1">
-//               {children}
-//             </main>          
-//           <Footer />
-//         </ThemeProvider>
-
-//       </body>
-//     </html>
-//   );
-// }
-
 import type { Metadata } from "next";
 import "./globals.css"
 import CommonLayout from '@/layouts/CommonLayout'; 
 import { ThemeProvider } from '@/components/theme-provider'
 
 export const metadata: Metadata = {
-  title: "Portfolio-Samaneh Heshmatzadeh",
-  description: "Samaneh Heshmatzadeh portfolio",
+  title: "Samaneh Heshmatzadeh | Full Stack Software Developer",
+  description: "Portfolio of Samaneh Heshmatzadeh, a full stack software developer building responsive web applications with React, Next.js, Node.js, C#, and SQL.",
   icons: {
     icon: "/images/sama.svg",  
     apple: "/images/sama.svg", 

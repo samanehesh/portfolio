@@ -1,15 +1,21 @@
-.button-link {
-    display: inline-block;
-    padding: 10px 20px;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    text-align: center;
-    transition: background-color 0.3s ease;
-    margin-left: 20px;
-    cursor: pointer;
-  }
+.resume-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 8px 16px;
+  color: #ffffff;
+  background-color: #111827;
+  border: 1px solid #111827;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
 
-  .button-link:hover {
-    background-color: #012e5e;
-  }
+.resume-link:hover {
+  background-color: #263241;
+  transform: translateY(-1px);
+}

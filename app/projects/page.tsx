@@ -9,6 +9,7 @@ import { TAGS } from '@/data/tags';
 import { ITag } from '@/interfaces/ITag';
 
 import Image from 'next/image';
+import { ArrowRightIcon } from '@phosphor-icons/react';
 
 import Stars from '@/components/stars';
 
@@ -50,14 +51,22 @@ const ProjectsPage = () => {
     
 
     return (
-        <div className='dark:bg-black'>
+        <div className='projects-page dark:bg-black'>
+            <section className="projects-hero dark:text-white">
+                <p className="projects-eyebrow">Selected work</p>
+                <h1>Projects that show full stack thinking</h1>
+                <p>
+                    A focused collection of web applications covering responsive interfaces,
+                    API integration, authentication, database-backed workflows, and MVC systems.
+                </p>
+            </section>
             <div className="filters">
                 {tags.map((tag, index) => (
-                    <p
+                    <button
                         key={index}
                         onClick={() => setSelectedTag(selectedTag === tag.name ? null : tag.name)}
                         className={`
-                            px-3 py-1 rounded-md border cursor-pointer transition-colors duration-200 ease-in-out
+                            px-3 py-1 border cursor-pointer transition-colors duration-200 ease-in-out
                             ${selectedTag === tag.name 
                             ? 'bg-black text-white border-black dark:bg-white dark:text-black dark:border-white'
                             : 'bg-white text-black border-gray-400 hover:bg-gray-100 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700'
@@ -65,7 +74,7 @@ const ProjectsPage = () => {
                         `}
                         >
                         {tag.name}
-                    </p>
+                    </button>
 
                 ))}
             </div>
@@ -74,7 +83,7 @@ const ProjectsPage = () => {
                 <div className="mb-3 projects">
                     {projects.length > 0 ? (
                         projects.map((project, index) => (
-                            <div className="project dark:bg-black" key={index}>
+                            <article className="project dark:bg-black dark:text-white" key={index}>
                                 <div className="images">
                                     <Image
                                         src={`/pimages/${project.image?.[0] || "angular.png"}`}
@@ -86,48 +95,42 @@ const ProjectsPage = () => {
                                             objectFit: "cover", 
                                             width: "100%", 
                                             height: "100%", 
-                                            borderRadius: "20px",
-                                            padding: "2px",
+                                            borderRadius: "8px",
                                         }}
                                     />
                                 </div>
-                                <h1 className="m-3 title dark:text-white">{project.title}</h1>
+                                <div className="project-copy">
+                                    <p className="project-category">{project.category?.name}</p>
+                                    <h2 className="title dark:text-white">{project.title}</h2>
+                                    <p className="project-excerpt">{project.excerpt}</p>
+                                </div>
                                 <div className="details">
                                     <div className="tags">
                                         {project.tags &&
                                             project.tags.map((tag, index) => (
-                                                // <p
-                                                //     style={{
-                                                //         borderColor: tag?.color || "#007bff",
-                                                //     }}
-                                                //     key={index}
-                                                // >
-                                                //     {tag.name}
-                                                // </p>
-
-                                                <p
+                                                <button
                                                     key={index}
                                                     onClick={() => setSelectedTag(selectedTag === tag.name ? null : tag.name)}
                                                     className={`
-                                                        px-3 py-1 rounded-md border cursor-pointer transition-colors duration-200 ease-in-out
+                                                        px-3 py-1 border cursor-pointer transition-colors duration-200 ease-in-out
                                                         ${selectedTag === tag.name 
                                                         ? 'bg-black text-white dark:bg-white dark:text-black' 
                                                         : 'bg-white text-black dark:bg-gray-800 dark:text-white'
                                                         }
                                                     `}
-                                                    //   style={{ borderColor: tag?.color || "#007bff" }} // dynamic border
                                                     >
                                                     {tag.name}
-                                                    </p>
+                                                    </button>
                                             ))}
                                     </div>
                                     <div>
                                         <Link className="moreinfo dark:bg-gray-800  dark:text-white" href={`/projects/detail/${project.slug}`}>
-                                            i
+                                            <span>Case study</span>
+                                            <ArrowRightIcon size={16} weight="bold" />
                                         </Link>
                                     </div>
                                 </div>
-                            </div>
+                            </article>
                         ))
                     ) : (
                         <p className='dark:text-white'style={{ textAlign: "center", marginTop: "20px", fontSize: "18px" }}>

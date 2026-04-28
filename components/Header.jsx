@@ -64,7 +64,7 @@ const Header = () => {
           <a
             href="/resume/Samaneh-Heshmatzadeh.pdf"
             download
-            className="button-link  dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white font-normal"
+            className="resume-link dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white"
           >
             Resume
           </a>
