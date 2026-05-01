@@ -5,10 +5,13 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
 const SlickCarousel = () => {
   const [slidesToShow, setSlidesToShow] = useState(3); // Default number of images per slide
   const [iconSize, setIconSize] = useState(80); // Default number of images per slide
+  const { resolvedTheme } = useTheme();
+  const isDark = resolvedTheme === "dark";
 
   useEffect(() => {
     const updateSlidesToShow = () => {
@@ -51,12 +54,18 @@ const SlickCarousel = () => {
   };
 
   const images = [
-    { src: "/images/angular.png", name: "Angular" },
+    { src: "/images/angular-icon-svgrepo-com.svg", name: "Angular" },
     { src: "/images/react.png", name: "React" },
-    { src: "/images/nextjs.png", name: "Next.js" },
+
+    {
+      src: isDark
+        ? "/images/next-Logo-white.png"
+        : "/images/next-Logo-black.svg",
+      name: "Next.js",
+    },
     { src: "/images/vue.png", name: "Vue.js" },
 
-    { src: "/images/django.png", name: "Django" },
+    { src: "/images/django-svgrepo-com.svg", name: "Django" },
     { src: "/images/node.png", name: "Node.js" },
     { src: "/images/aspnetcore.png", name: "ASP.NET Core" },
 
@@ -65,10 +74,17 @@ const SlickCarousel = () => {
 
     { src: "/images/sql.png", name: "SQL" },
     { src: "/images/postgresql.svg", name: "PostgreSQL" },
-    { src: "/images/mongoDb.svg", name: "MongoDB" },
+    { src: "/images/mongodb-svgrepo-com.svg", name: "MongoDB" },
     
-    { src: "/images/heroku.png", name: "Heroku" },
-    { src: "/images/vercel.png", name: "Vercel" },
+    { src: "/images/heroku-icon-svgrepo-com (2).svg", name: "Heroku" },
+
+    {
+      src: isDark
+        ? "/images/vercel-Logo-white.svg"
+        : "/images/Vercel_Logo_0.svg",
+      name: "Vercel",
+    },
+
   ];
 
   return (
