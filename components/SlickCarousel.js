@@ -81,8 +81,8 @@ const SlickCarousel = () => {
     {
       src: isDark
         ? "/images/vercel-Logo-white.svg"
-        // : "/images/Vercel_Logo_0.svg",
         : "/images/Vercel_Logo_0.svg",
+        // : "/images/Vercel_Logo_0.svg",
       name: "Vercel",
     },
 
