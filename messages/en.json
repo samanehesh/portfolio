@@ -1,0 +1,101 @@
+{
+  "brand": "S-H",
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "label": "A little about me",
+  "greeting": "Hello, my name is",
+  "name": "Samaneh Heshmatzadeh",
+  "intro": "I build thoughtful digital experiences. A developer who cares about the details, from the first idea to the final interaction.",
+  "work": "Explore my work",
+  "about": "More about me",
+  "photo": "Portrait of Samane",
+  "photoNote": "A space for the person behind the pixels.",
+  "strengthTitle": "Good work starts with curiosity.",
+  "strengths": {
+    "0": {
+      "number": "01",
+      "title": "Built with care",
+      "description": "Clean interfaces, considered interactions, and a focus on making the web feel a little more human."
+    },
+    "1": {
+      "number": "02",
+      "title": "Always curious",
+      "description": "Exploring ideas, learning through building, and staying open to a different way of solving a problem."
+    },
+    "2": {
+      "number": "03",
+      "title": "Made for people",
+      "description": "Starting with what people need and turning complexity into something clear and useful."
+    }
+  },
+  "projectLabel": "Selected work",
+  "projectTitle": "Ideas, brought to life.",
+  "projectIntro": "Selected projects spanning full-stack platforms, API integrations, and interactive web applications.",
+  "projects": {
+    "restaurant": {
+      "title": "Restaurant Insights",
+      "type": "Restaurant management platform",
+      "description": "A multilingual platform for restaurant management and analytics, with restaurant and branch onboarding.",
+      "details": "Built with Next.js, Supabase, Drizzle, and oRPC. The public code includes restaurant and branch setup, business-hours forms, menu data models, and shared authentication and onboarding checks."
+    },
+    "remarcable": {
+      "title": "Remarcable Product Search",
+      "type": "Full-stack search application",
+      "description": "A responsive product catalogue with live search, category filters, and multi-tag filtering.",
+      "details": "A Django API and Next.js frontend with filters synchronized to the URL, sortable results, mobile product cards, and loading and error states. Django QuerySets optimize related data; production uses PostgreSQL with Heroku and Vercel deployments."
+    },
+    "sips": {
+      "title": "Sips Cafe",
+      "type": "Full-stack ordering platform",
+      "description": "A bubble tea ordering platform with menu browsing, payments, and administration tools.",
+      "details": "A BCIT team project using C#, ASP.NET Core MVC, and Azure SQL. Features include PayPal payments, user and order management, authentication and authorization, email verification, and Google reCAPTCHA."
+    },
+    "movie": {
+      "title": "Movie Mania",
+      "type": "Movie discovery application",
+      "description": "Explore movies from TMDB and organize favorites and a personal watchlist.",
+      "details": "Built with React and Redux for shared state, Axios for TMDB requests, and React Router for navigation. The project supports adding and removing movies from favorites and watchlists."
+    },
+    "deck": {
+      "title": "Deck Master",
+      "type": "E-commerce application",
+      "description": "An online store with product browsing, order handling, and PayPal payments.",
+      "details": "A C# MVC application backed by SQL. The project combines storefront pages, user and role administration, transaction views, and a PayPal checkout flow."
+    },
+    "billing": {
+      "title": "Express Billing",
+      "type": "Backend and billing application",
+      "description": "A billing application with authenticated access and MongoDB-backed billing records.",
+      "details": "Built with Node.js and Express, using Passport for authentication and MongoDB for storing billing information. The application supports publishing and managing customer bills."
+    }
+  },
+  "detail": "Project notes",
+  "contactLabel": "What’s next?",
+  "contactTitle": "Let’s make something\nmeaningful.",
+  "contactIntro": "Have an idea, a question, or just want to say hello? This is where our conversation starts.",
+  "footer": "Built with Next.js. Made with care.",
+  "backTop": "Back to top",
+  "theme": "Toggle dark theme",
+  "skip": "Skip to content",
+  "metadataTitle": "Samaneh Heshmatzadeh — Portfolio",
+  "navigationLabel": "Main navigation",
+  "monogram": "You.",
+  "switchLanguage": "فارسی",
+  "openMenu": "Open menu",
+  "closeMenu": "Close menu",
+  "downloadResume": "Download résumé",
+  "resumeUnavailable": "Résumé coming soon.",
+  "emailMe": "Email me",
+  "linkedin": "LinkedIn",
+  "skillsLabel": "Skills",
+  "copyEmail": "Copy email address: {email}",
+  "emailCopied": "Email copied.",
+  "emailCopyFailed": "Couldn’t copy. Please select and copy the address.",
+  "viewCode": "View code",
+  "liveDemo": "Live demo",
+  "projectScreenshot": "Screenshot of {title}"
+}

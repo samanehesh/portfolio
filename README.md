@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bilingual portfolio
 
-## Getting Started
+Next.js App Router, React, and TypeScript. English at `/`, Farsi at `/fa/` with native RTL layout. Static export is generated in `out/`.
 
-First, run the development server:
+## Run
 
-```bash
+```sh
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://127.0.0.1:3000/.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```sh
+npm run typecheck
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Résumé download
 
-## Learn More
+Add your PDF as `public/resume.pdf`, then rebuild (or refresh in development) to enable the résumé download button. Until the file exists, the button displays a coming-soon state. Both languages share the same PDF.
 
-To learn more about Next.js, take a look at the following resources:
+## Personalize
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Edit translations in `messages/en.json` and `messages/fa.json`. Pages and metadata use next-intl; shared project IDs, artwork, and technology tags live in `lib/projects.ts`.
+- Replace the sample projects with your work. Email and LinkedIn links are configured in `lib/contact.ts`.
+- Update metadata in `app/[[...locale]]/page.tsx`. Search indexing is disabled while personal content is unfinished.
+- Styling lives in `app/globals.css`. The theme follows system preference until changed and saves the choice locally.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Fonts load from Google Fonts with system fallbacks. No database, account, or API keys are required.
 
-## Deploy on Vercel
+## Languages
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+next-intl is configured in `i18n/request.ts`, `i18n/routing.ts`, and `i18n/navigation.ts`. Use `getTranslations` in async Server Components and `useTranslations` in Client Components under the locale layout's `NextIntlClientProvider`. Use the exported `Link` for localized page navigation.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+English is the default language at `/`; Farsi is at `/fa/`. `/en/` also renders English for compatibility with existing links. The optional locale route renders the English homepage directly, without an entry page or redirect. Static export does not use proxy/middleware or browser language detection. To add a language, update `i18n/routing.ts`, add its message file, and set the appropriate text direction in the locale layout.
